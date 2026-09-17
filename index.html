@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <meta name="theme-color" content="#1677e8">
+  <title>Creditstar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+
+    <!-- LOGIN -->
+    <section id="loginScreen" class="screen login-screen">
+      <div class="login-bg"></div>
+      <div class="login-content">
+        <img class="login-logo" src="assets/app-icon.png" alt="App">
+        <h1>Login</h1>
+
+        <div class="field">
+          <span class="field-icon">👤</span>
+          <input id="username" type="text" autocomplete="username" placeholder="Username">
+        </div>
+
+        <div class="field">
+          <span class="field-icon">🔒</span>
+          <input id="password" type="password" autocomplete="current-password" placeholder="Password">
+          <button class="eye" type="button" onclick="togglePassword()">●</button>
+        </div>
+
+        <div class="field code-field">
+          <span class="field-icon">▣</span>
+          <input id="captcha" type="text" placeholder="Code">
+          <div id="captchaBox" class="captcha-box" onclick="refreshCaptcha()"></div>
+        </div>
+
+        <button id="loginBtn" class="primary-btn" type="button">Login</button>
+        <div id="loginMessage" class="login-message"></div>
+      </div>
+    </section>
+
+    <!-- MAIN -->
+    <section id="mainScreen" class="screen main-screen hidden">
+      <header class="topbar">
+        <div>
+          <div class="brand">Creditstar</div>
+          <div id="pageSubtitle" class="subtitle">Home</div>
+        </div>
+        <button class="icon-btn" onclick="showSearch()" aria-label="Search">⌕</button>
+      </header>
+
+      <main id="page" class="page"></main>
+
+      <nav class="bottom-nav" id="bottomNav">
+        <button data-tab="new" onclick="switchTab('new')">
+          <img src="assets/tab-new-normal.png"><span>New</span>
+        </button>
+        <button data-tab="pro" onclick="switchTab('pro')">
+          <img src="assets/tab-pro-normal.png"><span>Pro</span>
+        </button>
+        <button data-tab="com" onclick="switchTab('com')">
+          <img src="assets/tab-com-normal.png"><span>Com</span>
+        </button>
+        <button data-tab="ptp" onclick="switchTab('ptp')">
+          <img src="assets/tab-ptp-normal.png"><span>PTP</span>
+        </button>
+        <button data-tab="mark" onclick="switchTab('mark')">
+          <img src="assets/tab-mark-normal.png"><span>Mark</span>
+        </button>
+        <button data-tab="me" onclick="switchTab('me')">
+          <span class="me-symbol">●</span><span>Me</span>
+        </button>
+      </nav>
+    </section>
+
+    <div id="toast" class="toast"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
